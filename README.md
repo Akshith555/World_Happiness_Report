@@ -25,12 +25,45 @@ This project is designed to help you:
 
 ## 🗂️ Project Structure
 
+Absolutely! Here’s your **project structure section** in markdown code block, following the convention you used:
+
+```markdown
+## 🗂️ Project Structure
+
+
+
+world-happiness-report/
+│
+├── data/
+│   ├── 2015.csv ... 2019.csv                    # Raw datasets
+│   ├── world\_happiness\_final.csv                # Cleaned, combined dataset
+│   ├── world\_happiness\_predictions.csv          # Model predictions
+│   ├── world\_happiness\_predictions\_with\_flags.csv # Dataset with flag URLs
+│
+├── models/
+│   ├── happiness\_rf\_model.pkl
+│   ├── happiness\_gbr\_model.pkl
+│   ├── happiness\_xgb\_model.pkl
+│
+├── notebooks/
+│   ├── world\_happiness\_prediction.ipynb         # Main notebook
+│   └── FlagURL\_Generator.ipynb                  # Notebook for flag URLs
+│
+├── visuals/
+│   ├── proj.pdf                                 # Power BI dashboard export
+│   └── dashboard\_screenshot.png                 # Dashboard screenshot(s)
+│
+└── README.md
+
+
+```
+
 
 ---
 
 ## 📊 The Dataset
 
-* **Source:** [World Happiness Report (2015–2019)](https://worldhappiness.report/)
+* **Source:** [World Happiness Report (2015–2019)](https://www.kaggle.com/datasets/unsdsn/world-happiness/)
 * **Years:** 2015–2019, 150+ countries per year
 * **Key Features:** GDP per Capita, Social Support, Health, Freedom, Generosity, Trust
 * **Target:** Happiness Score (0–10 scale)
@@ -114,28 +147,24 @@ This project is designed to help you:
 ## 🛠️ How to Run Locally
 
 1. **Clone the Repository**
-
-Absolutely! Here’s that entire section reformatted in **GitHub-friendly markdown**—ready to copy:
-
----
-
 ````markdown
----
-
-## 🛠️ How to Run Locally
 
 1. **Install Python Dependencies**
-
-   ```bash
    pip install -r requirements.txt
 ````
 
-2. **Run the Main Notebook**
+2. **Install Python Dependencies**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run the Main Notebook**
 
    * Open `notebooks/world_happiness_prediction.ipynb`
    * Execute cells for EDA, modeling, and SHAP analysis
 
-3. **Check the Power BI Dashboard**
+4. **Check the Power BI Dashboard**
 
    * View results with `visuals/proj.pdf` (PDF export)
    * *(Contact for interactive dashboard link!)*
@@ -152,23 +181,11 @@ Absolutely! Here’s that entire section reformatted in **GitHub-friendly markdo
 * Constructs flag URLs via [Country Flags API](https://countryflagsapi.com/png/{code}) and [Flagpedia](https://flagpedia.net/data/flags/normal/{code}.png)
 * Output: Merged into predictions file for use in Power BI
 
----
-
-## 🔧 Tech Stack
-
-* **Python:** pandas, scikit-learn, xgboost, shap, matplotlib, seaborn
-* **Visualization:** Power BI, SHAP
-* **Deployment:** Models saved via `joblib` for reuse
-
----
-
 ## 📌 Future Enhancements
 
 
 - **Real-Time Data Integration:** Connect to live APIs (e.g., UN, World Bank) to automatically update happiness and economic indicators.
-- **Interactive Web App:** Build a user-friendly Streamlit or Dash app where users can predict happiness scores and visualize results interactively.
 - **Geospatial Analysis:** Add advanced interactive maps (using Plotly or Folium) to explore regional patterns and trends in happiness.
-- **Causal Inference & Policy Simulation:** Use causal ML to estimate how changes in GDP, health, or social support could impact national happiness, enabling “what-if” scenario analysis.
 - **Time-Series Forecasting:** Predict future happiness trends with ARIMA, Prophet, or LSTM, factoring in historical and macroeconomic data.
 - **Explainable AI Enhancements:** Expand on SHAP with tools like LIME or Counterfactuals to provide deeper, more actionable insights for policymakers.
 - **API for Model Serving:** Expose trained models as an API endpoint (using FastAPI or Flask) for integration with other systems and apps.
